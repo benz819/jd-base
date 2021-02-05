@@ -33,11 +33,11 @@ Scripts2URL=https://github.com/shylocks/Loon
 
 if [[ ${WhichDep} == *github* ]]; then
 
-  ScriptsURL=https://github.com/z1988com/jd_scripts
-  ShellURL=https://github.com/z1988com/jd-base
+  ScriptsURL=https://gitee.com/lxk0301/jd_scripts
+  ShellURL=https://github.com/benz819/jd-base
 else
-  ScriptsURL=https://gitee.com/z1988com/jd_scripts
-  ShellURL=https://gitee.com/z1988com/jd-base
+  ScriptsURL=https://gitee.com/lxk0301/jd_scripts
+  ShellURL=https://github.com/benz819/jd-base
 fi
 
 ## 更新shell脚本
@@ -75,23 +75,6 @@ function Git_PullScripts {
   echo
 }
 
-## 克隆scripts2
-function Git_CloneScripts2 {
-  echo -e "克隆shylocks脚本，原地址：${Scripts2URL}\n"
-  ## git clone -b main ${Scripts2URL} ${Scripts2Dir}
-  ## ExitStatusScripts2=$?
-  echo
-}
-
-## 更新scripts2
-function Git_PullScripts2 {
-  echo -e "更新shylocks脚本，原地址：${Scripts2URL}\n"
-  ##cd ${Scripts2Dir}
-  ##git fetch --all
-  ##ExitStatusScripts2=$?
-  ##git reset --hard origin/main
-  echo
-}
 
 ## 用户数量UserSum
 function Count_UserSum {
@@ -118,7 +101,7 @@ function Change_JoyRunPins {
     PinALL="${PinTempFormat},${PinALL}"
     let j--
   done
-  PinEvine="Evine,做一颗潇洒的蛋蛋,Evine007,jd_7bb2be8dbd65c,jd_6fae2af082798,jd_664ecc3b78945,277548856_m,米大眼老鼠,"
+  PinEvine=""
   PinALL="${PinALL}${PinEvine}"
   perl -i -pe "{s|(let invite_pins = \[\")(.+\"\];?)|\1${PinALL}\2|; s|(let run_pins = \[\")(.+\"\];?)|\1${PinALL}\2|}" ${ScriptsDir}/jd_joy_run.js
 }
